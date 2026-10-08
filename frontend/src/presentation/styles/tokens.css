@@ -1,0 +1,104 @@
+/* ============================================================
+   CASIO fx-991EX DESIGN TOKENS
+   Reference: Physical device color-picked values
+   Use these variables ONLY in all styling
+   ============================================================ */
+
+:root {
+  /* === BODY & STRUCTURE === */
+  --calc-body-bg:          #1a2332;   /* Dark navy — main body */
+  --calc-body-bg-alt:      #f2d0d8;   /* Pink edition (light mode) */
+  --calc-border-color:     #0d1520;   /* Outer border/shadow */
+  --calc-body-radius:      20px;      /* Rounded corners */
+  --calc-body-width:       340px;     /* Desktop exact width */
+  --calc-body-padding:     16px;
+
+  /* === DISPLAY (LCD AREA) === */
+  --display-bg:            #c8d5a0;   /* Green-tinted LCD background */
+  --display-bg-dark:       #2a3a1a;   /* Dark mode display */
+  --display-text:          #1a2d0a;   /* Dark green text on LCD */
+  --display-bezel-bg:      #0f1e2e;   /* Frame around the display */
+  --display-bezel-radius:  8px;
+  --display-padding:       8px 12px;
+  --display-font:          'Courier New', 'Consolas', monospace;
+  --display-expr-size:     13px;      /* Expression line (smaller) */
+  --display-result-size:   26px;      /* Result line (larger) */
+  --display-height:        72px;
+
+  /* === BUTTON BASE === */
+  --btn-width:             52px;
+  --btn-height:            28px;
+  --btn-radius:            4px;
+  --btn-font-size:         11px;
+  --btn-font-family:       Arial, sans-serif;
+  --btn-font-weight:       600;
+  --btn-shadow:            0 3px 0 rgba(0,0,0,0.5);
+  --btn-shadow-pressed:    0 1px 0 rgba(0,0,0,0.5);
+  --btn-transition:        transform 80ms ease, box-shadow 80ms ease;
+
+  /* === BUTTON COLORS (By Group) === */
+  --btn-shift-bg:          #f5a623;   /* Orange — SHIFT key */
+  --btn-shift-text:        #1a2332;
+  --btn-alpha-bg:          #c0392b;   /* Red — ALPHA key */
+  --btn-alpha-text:        #ffffff;
+  --btn-number-bg:         #3d5168;   /* Dark blue-gray — 0-9 */
+  --btn-number-text:       #ffffff;
+  --btn-sci-bg:            #2c3e50;   /* Darker navy — functions */
+  --btn-sci-text:          #ffffff;
+  --btn-equals-bg:         #e67e22;   /* Amber — equals */
+  --btn-equals-text:       #ffffff;
+  --btn-delete-bg:         #c0392b;   /* Red — DEL/AC */
+  --btn-delete-text:       #ffffff;
+  --btn-nav-bg:            #2c3e50;   /* Arrow keys, MENU */
+  --btn-nav-text:          #f5a623;   /* Orange label on nav buttons */
+
+  /* === LABEL COLORS (Sub-labels above/below buttons) === */
+  --label-shift-color:     #f5a623;   /* Orange — SHIFT functions */
+  --label-alpha-color:     #c0392b;   /* Red — ALPHA functions */
+  --label-secondary-size:  8px;       /* Secondary label font size */
+
+  /* === INDICATOR BADGES (DEG / RAD / GRAD / CMPLX) === */
+  --indicator-bg:          #2c3e50;
+  --indicator-text:        #f5a623;
+  --indicator-font-size:   9px;
+  --indicator-padding:     2px 4px;
+  --indicator-radius:      2px;
+
+  /* === GRID LAYOUT === */
+  --btn-grid-cols:         5;
+  --btn-grid-gap:          4px;
+  --btn-grid-padding:      8px;
+
+  /* === ANIMATION === */
+  --btn-press-scale:       0.92;
+  --btn-press-duration:    80ms;
+  --lcd-flicker-duration:  150ms;
+  --panel-slide-duration:  300ms;
+  --panel-slide-easing:    cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* === SHADOWS & DEPTH === */
+  --calc-body-shadow:      0 8px 32px rgba(0,0,0,0.6),
+                           0 2px 8px rgba(0,0,0,0.4);
+  --display-inner-shadow:  inset 0 2px 6px rgba(0,0,0,0.3);
+
+  /* === THEME BACKGROUND === */
+  --theme-bg:              #0d1520;   /* Page background */
+  --theme-surface:         #1a2332;   /* Calculator body */
+}
+
+/* Light mode (pink Casio edition) */
+[data-theme="light"] {
+  --theme-bg:              #e8ecf0;
+  --calc-body-bg:          #f2d0d8;   /* Pink edition */
+  --display-bg:            #d4e0a8;
+}
+
+/* Accessibility: reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --btn-transition:      none;
+    --btn-press-duration:  0ms;
+    --lcd-flicker-duration: 0ms;
+    --panel-slide-duration: 0ms;
+  }
+}

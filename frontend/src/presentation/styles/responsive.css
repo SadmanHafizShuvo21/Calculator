@@ -1,0 +1,396 @@
+/* ============================================================
+   CASIO fx-991EX RESPONSIVE STYLES
+   Mobile-first approach with breakpoints at 480px and 768px
+   ============================================================ */
+
+/* ========== BASE: MOBILE FIRST (< 480px) ========== */
+/* These styles apply to all screen sizes by default */
+
+.calc-body {
+  /* Will be scaled on small screens */
+}
+
+/* ========== SMALL MOBILE (320px - 480px) ========== */
+@media (max-width: 480px) {
+  body {
+    padding: 8px;
+  }
+
+  .calc-body {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px;
+    margin: 0 auto;
+  }
+
+  .calc-display {
+    min-height: 65px;
+    padding: 6px 10px;
+    margin-bottom: 12px;
+  }
+
+  .display-expression {
+    font-size: 11px;
+    height: 16px;
+  }
+
+  .display-result {
+    font-size: 18px;
+    height: 28px;
+  }
+
+  .display-indicators {
+    height: 14px;
+    gap: 2px;
+    margin-bottom: 2px;
+  }
+
+  .indicator {
+    font-size: 7px;
+    padding: 1px 3px;
+  }
+
+  .btn {
+    height: 24px;
+    font-size: 9px;
+    padding: 2px;
+  }
+
+  .btn-grid {
+    gap: 2px;
+    padding: 6px;
+  }
+
+  .theme-toggle {
+    font-size: 14px;
+    padding: 3px 5px;
+    top: 6px;
+    right: 6px;
+  }
+
+  .mode-indicator {
+    width: 6px;
+    height: 6px;
+    top: 10px;
+    left: 10px;
+  }
+
+  /* History panel: full width on mobile */
+  .history-panel {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 80%;
+    max-width: 280px;
+    height: 100vh;
+    background-color: var(--calc-body-bg);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 16px;
+    overflow-y: auto;
+  }
+
+  /* Game overlay: full screen */
+  .game-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+  }
+
+  .game-container {
+    width: 90%;
+    max-width: 300px;
+    background-color: var(--calc-body-bg);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* ========== TABLET (481px - 768px) ========== */
+@media (min-width: 481px) and (max-width: 768px) {
+  body {
+    padding: 16px;
+  }
+
+  .calc-body {
+    width: 100%;
+    max-width: 360px;
+    padding: 14px;
+    margin: 0 auto;
+  }
+
+  .calc-display {
+    min-height: 68px;
+    padding: 8px 11px;
+    margin-bottom: 14px;
+  }
+
+  .display-expression {
+    font-size: 12px;
+    height: 17px;
+  }
+
+  .display-result {
+    font-size: 22px;
+    height: 30px;
+  }
+
+  .display-indicators {
+    height: 15px;
+    gap: 3px;
+    margin-bottom: 3px;
+  }
+
+  .indicator {
+    font-size: 8px;
+    padding: 2px 4px;
+  }
+
+  .btn {
+    height: 26px;
+    font-size: 10px;
+  }
+
+  .btn-grid {
+    gap: 3px;
+    padding: 7px;
+  }
+
+  .theme-toggle {
+    font-size: 16px;
+    padding: 4px 6px;
+  }
+
+  .mode-indicator {
+    width: 7px;
+    height: 7px;
+  }
+
+  /* History panel: side panel */
+  .history-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 280px;
+    height: 100%;
+    background-color: var(--calc-body-bg);
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 16px;
+    overflow-y: auto;
+    border-radius: 0 8px 8px 0;
+  }
+
+  /* Game overlay: centered modal */
+  .game-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+  }
+
+  .game-container {
+    width: 85%;
+    max-width: 320px;
+    background-color: var(--calc-body-bg);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* ========== DESKTOP (> 769px) ========== */
+@media (min-width: 769px) {
+  body {
+    padding: 20px;
+  }
+
+  .calc-body {
+    width: var(--calc-body-width);
+    padding: var(--calc-body-padding);
+    margin: 0;
+  }
+
+  .calc-display {
+    min-height: var(--display-height);
+    padding: var(--display-padding);
+    margin-bottom: 16px;
+  }
+
+  .display-expression {
+    font-size: var(--display-expr-size);
+    height: 18px;
+  }
+
+  .display-result {
+    font-size: var(--display-result-size);
+    height: 32px;
+  }
+
+  .display-indicators {
+    height: 16px;
+    gap: 4px;
+    margin-bottom: 4px;
+  }
+
+  .indicator {
+    font-size: var(--indicator-font-size);
+    padding: var(--indicator-padding);
+  }
+
+  .btn {
+    height: var(--btn-height);
+    font-size: var(--btn-font-size);
+  }
+
+  .btn-grid {
+    gap: var(--btn-grid-gap);
+    padding: var(--btn-grid-padding);
+  }
+
+  .theme-toggle {
+    font-size: 18px;
+    padding: 6px 8px;
+  }
+
+  .mode-indicator {
+    width: 8px;
+    height: 8px;
+  }
+
+  /* History panel: fixed side panel */
+  .history-panel {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    max-height: 600px;
+    background-color: var(--calc-body-bg);
+    box-shadow: -4px 0 16px rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+    border-radius: 0 12px 12px 0;
+  }
+
+  /* Game overlay: modal dialog */
+  .game-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+  }
+
+  .game-container {
+    width: 90%;
+    max-width: 500px;
+    background-color: var(--calc-body-bg);
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.9);
+  }
+}
+
+/* ========== EXTRA LARGE SCREENS (> 1200px) ========== */
+@media (min-width: 1200px) {
+  body {
+    padding: 40px;
+  }
+
+  .calc-body {
+    width: var(--calc-body-width);
+  }
+}
+
+/* ========== LANDSCAPE ORIENTATION ========== */
+@media (orientation: landscape) and (max-height: 600px) {
+  body {
+    padding: 10px;
+  }
+
+  .calc-body {
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .calc-display {
+    min-height: 50px;
+  }
+
+  .btn {
+    height: 20px;
+    font-size: 8px;
+  }
+
+  .display-result {
+    font-size: 16px;
+  }
+}
+
+/* ========== TOUCH DEVICE OPTIMIZATIONS ========== */
+@media (pointer: coarse) and (hover: none) {
+  /* Touch devices: larger tap targets */
+  .btn {
+    min-height: 44px;
+  }
+
+  /* Disable hover effects on touch */
+  .btn:hover {
+    transform: none;
+  }
+
+  /* Remove focus ring on touch (will show on keyboard focus) */
+  .btn:focus-visible {
+    outline-offset: 0;
+  }
+}
+
+/* ========== PRINT STYLES (if needed) ========== */
+@media print {
+  body {
+    display: none;
+  }
+}
+
+/* ========== HIGH CONTRAST MODE ========== */
+@media (prefers-contrast: more) {
+  .btn {
+    border-width: 2px;
+    border-style: solid;
+  }
+
+  .btn-number {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-equals {
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .display-indicators .indicator {
+    border: 1px solid var(--indicator-text);
+  }
+}
+
+/* ========== DARK COLOR SCHEME ========== */
+@media (prefers-color-scheme: dark) {
+  /* Already defaults to dark, no changes needed */
+}
+
+/* ========== LIGHT COLOR SCHEME ========== */
+@media (prefers-color-scheme: light) {
+  /* User explicitly prefers light mode, can override */
+  /* But we'll respect the data-theme attribute instead */
+}

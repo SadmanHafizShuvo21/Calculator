@@ -1,0 +1,252 @@
+/* ========================================
+   CSS DESIGN SYSTEM - TOKENS
+   ======================================== */
+
+:root {
+    /* ============ COLOR PALETTE ============ */
+    
+    /* Primary Colors (Casio Gray/Black theme) */
+    --color-primary: #2c3e50;
+    --color-primary-dark: #1a1a1a;
+    --color-primary-light: #34495e;
+    
+    /* Accent Colors */
+    --color-accent-orange: #ff9f43;
+    --color-accent-red: #ee5a6f;
+    --color-accent-blue: #0984e3;
+    --color-accent-green: #00b894;
+    
+    /* Neutral Colors (Light mode) */
+    --color-bg-light: #f5f5f5;
+    --color-bg-light-secondary: #ffffff;
+    --color-text-light: #1a1a1a;
+    --color-text-light-secondary: #666666;
+    --color-border-light: #e0e0e0;
+    
+    /* Neutral Colors (Dark mode) */
+    --color-bg-dark: #1a1a1a;
+    --color-bg-dark-secondary: #2d2d2d;
+    --color-text-dark: #f5f5f5;
+    --color-text-dark-secondary: #b0b0b0;
+    --color-border-dark: #3d3d3d;
+    
+    /* Display Colors */
+    --color-display-bg: #1a1a1a;
+    --color-display-text: #00ff00;
+    --color-display-text-alt: #00dd00;
+    
+    /* Button Colors */
+    --color-btn-default-bg: #2d2d2d;
+    --color-btn-default-text: #f5f5f5;
+    --color-btn-default-hover: #3a3a3a;
+    --color-btn-default-active: #1a1a1a;
+    
+    --color-btn-op-bg: #ff9f43;
+    --color-btn-op-text: #ffffff;
+    --color-btn-op-hover: #ffa500;
+    --color-btn-op-active: #ff8c00;
+    
+    --color-btn-func-bg: #34495e;
+    --color-btn-func-text: #f5f5f5;
+    --color-btn-func-hover: #3d5a7d;
+    
+    --color-btn-ac-bg: #ee5a6f;
+    --color-btn-ac-text: #ffffff;
+    
+    --color-btn-equals-bg: #00b894;
+    --color-btn-equals-text: #ffffff;
+    --color-btn-equals-hover: #00a085;
+    
+    /* Status/Alert Colors */
+    --color-success: #27ae60;
+    --color-error: #c0392b;
+    --color-warning: #f39c12;
+    --color-info: #3498db;
+    
+    /* Current Theme Colors */
+    --color-bg: var(--color-bg-light);
+    --color-bg-secondary: var(--color-bg-light-secondary);
+    --color-text: var(--color-text-light);
+    --color-text-secondary: var(--color-text-light-secondary);
+    --color-border: var(--color-border-light);
+    
+    /* ============ TYPOGRAPHY ============ */
+    --font-family-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    --font-family-mono: 'Courier New', 'Monaco', 'Consolas', monospace;
+    
+    --font-size-xs: 0.75rem;      /* 12px */
+    --font-size-sm: 0.875rem;     /* 14px */
+    --font-size-base: 1rem;       /* 16px */
+    --font-size-lg: 1.125rem;     /* 18px */
+    --font-size-xl: 1.25rem;      /* 20px */
+    --font-size-2xl: 1.5rem;      /* 24px */
+    --font-size-3xl: 1.875rem;    /* 30px */
+    --font-size-4xl: 2.25rem;     /* 36px */
+    
+    --font-weight-light: 300;
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.75;
+    
+    /* ============ SPACING ============ */
+    --spacing-xs: 0.25rem;        /* 4px */
+    --spacing-sm: 0.5rem;         /* 8px */
+    --spacing-md: 1rem;           /* 16px */
+    --spacing-lg: 1.5rem;         /* 24px */
+    --spacing-xl: 2rem;           /* 32px */
+    --spacing-2xl: 3rem;          /* 48px */
+    --spacing-3xl: 4rem;          /* 64px */
+    
+    /* ============ BORDER RADIUS ============ */
+    --radius-none: 0;
+    --radius-xs: 0.25rem;         /* 4px */
+    --radius-sm: 0.5rem;          /* 8px */
+    --radius-md: 0.75rem;         /* 12px */
+    --radius-lg: 1rem;            /* 16px */
+    --radius-xl: 1.5rem;          /* 24px */
+    --radius-full: 9999px;
+    
+    /* ============ SHADOWS ============ */
+    --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* ============ TRANSITIONS ============ */
+    --transition-fast: 100ms ease-in-out;
+    --transition-base: 200ms ease-in-out;
+    --transition-slow: 300ms ease-in-out;
+    
+    /* ============ Z-INDEX SCALE ============ */
+    --z-base: 1;
+    --z-dropdown: 100;
+    --z-sticky: 200;
+    --z-fixed: 300;
+    --z-overlay: 400;
+    --z-modal: 500;
+    --z-tooltip: 600;
+    --z-notification: 700;
+    
+    /* ============ BUTTON DIMENSIONS ============ */
+    --btn-height-sm: 2.5rem;      /* 40px */
+    --btn-height-md: 3rem;        /* 48px */
+    --btn-height-lg: 3.5rem;      /* 56px */
+    
+    --btn-padding-x-sm: 0.75rem;
+    --btn-padding-x-md: 1rem;
+    --btn-padding-x-lg: 1.5rem;
+    
+    /* ============ INPUT DIMENSIONS ============ */
+    --input-height: 2.75rem;      /* 44px */
+    --input-padding-x: 0.875rem;
+    --input-padding-y: 0.625rem;
+    
+    /* ============ BREAKPOINTS (Mobile First) ============ */
+    --breakpoint-mobile: 320px;
+    --breakpoint-tablet: 481px;
+    --breakpoint-desktop: 769px;
+    --breakpoint-wide: 1024px;
+    --breakpoint-ultra: 1280px;
+}
+
+/* ============ DARK MODE ============ */
+body.dark-mode {
+    --color-bg: var(--color-bg-dark);
+    --color-bg-secondary: var(--color-bg-dark-secondary);
+    --color-text: var(--color-text-dark);
+    --color-text-secondary: var(--color-text-dark-secondary);
+    --color-border: var(--color-border-dark);
+}
+
+/* ============ LIGHT MODE (Default) ============ */
+body.light-mode {
+    --color-bg: var(--color-bg-light);
+    --color-bg-secondary: var(--color-bg-light-secondary);
+    --color-text: var(--color-text-light);
+    --color-text-secondary: var(--color-text-light-secondary);
+    --color-border: var(--color-border-light);
+}
+
+/* ============ RESETS & BASE STYLES ============ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    transition: background-color var(--transition-base), color var(--transition-base);
+}
+
+/* ============ UTILITY CLASSES ============ */
+
+/* Display utilities */
+.hidden { display: none !important; }
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Text utilities */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.text-primary { color: var(--color-accent-blue); }
+.text-success { color: var(--color-success); }
+.text-error { color: var(--color-error); }
+.text-warning { color: var(--color-warning); }
+
+/* Font weight utilities */
+.font-light { font-weight: var(--font-weight-light); }
+.font-normal { font-weight: var(--font-weight-normal); }
+.font-medium { font-weight: var(--font-weight-medium); }
+.font-semibold { font-weight: var(--font-weight-semibold); }
+.font-bold { font-weight: var(--font-weight-bold); }
+
+/* Spacing utilities */
+.m-0 { margin: 0; }
+.m-1 { margin: var(--spacing-md); }
+.m-2 { margin: var(--spacing-lg); }
+.mt-1 { margin-top: var(--spacing-md); }
+.mb-1 { margin-bottom: var(--spacing-md); }
+.ml-1 { margin-left: var(--spacing-md); }
+.mr-1 { margin-right: var(--spacing-md); }
+
+.p-0 { padding: 0; }
+.p-1 { padding: var(--spacing-md); }
+.p-2 { padding: var(--spacing-lg); }
+.px-1 { padding-left: var(--spacing-md); padding-right: var(--spacing-md); }
+.py-1 { padding-top: var(--spacing-md); padding-bottom: var(--spacing-md); }
+
+/* Flex utilities */
+.flex { display: flex; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }

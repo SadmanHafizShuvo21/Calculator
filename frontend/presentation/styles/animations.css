@@ -1,0 +1,450 @@
+/* ========================================
+   ANIMATIONS CSS - Transitions and Keyframe Animations
+   ======================================== */
+
+/* ============ BUTTON PRESS ANIMATION ============ */
+@keyframes buttonPress {
+    0% {
+        transform: scale(1) translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    50% {
+        transform: scale(0.98) translateY(2px);
+        box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+}
+
+.btn:active:not(:disabled) {
+    animation: buttonPress 150ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============ BUTTON PULSE ANIMATION ============ */
+@keyframes buttonPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    }
+}
+
+/* ============ DISPLAY GLOW ANIMATION ============ */
+@keyframes displayGlow {
+    0%, 100% {
+        text-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+        color: #00ff00;
+    }
+    50% {
+        text-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+        color: #00dd00;
+    }
+}
+
+.display-output {
+    animation: displayGlow 2s ease-in-out infinite;
+}
+
+/* ============ FADE IN ANIMATION ============ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.calculator-panel,
+.sidebar,
+.history-item {
+    animation: fadeIn 300ms ease-out;
+}
+
+/* ============ SLIDE IN FROM LEFT ============ */
+@keyframes slideInFromLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.menu-drawer.open {
+    animation: slideInFromLeft 300ms ease-out;
+}
+
+/* ============ SLIDE IN FROM RIGHT ============ */
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.sidebar {
+    animation: slideInFromRight 300ms ease-out;
+}
+
+/* ============ SLIDE IN FROM TOP ============ */
+@keyframes slideInFromTop {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.app-header {
+    animation: slideInFromTop 300ms ease-out;
+}
+
+/* ============ BOUNCE IN ANIMATION ============ */
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1.05);
+    }
+    70% {
+        transform: scale(0.9);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.modal-content {
+    animation: bounceIn 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+/* ============ SHAKE ANIMATION (Error feedback) ============ */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-5px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(5px);
+    }
+}
+
+.btn:disabled {
+    animation: shake 400ms ease-in-out;
+}
+
+/* ============ SPIN ANIMATION (Loading) ============ */
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    animation: spin 1s linear infinite;
+}
+
+/* ============ PULSE ANIMATION ============ */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+.modal {
+    animation: pulse 200ms ease-in-out;
+}
+
+/* ============ SLIDE DOWN ANIMATION (History item) ============ */
+@keyframes slideDown {
+    from {
+        max-height: 0;
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        max-height: 200px;
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.history-item {
+    animation: slideDown 300ms ease-out;
+}
+
+/* ============ FLIP ANIMATION (Theme toggle) ============ */
+@keyframes flip {
+    0% {
+        transform: rotateY(0deg);
+    }
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+.theme-toggle-btn:active {
+    animation: flip 600ms ease-in-out;
+}
+
+/* ============ COLOR TRANSITION ANIMATION ============ */
+@keyframes colorShift {
+    0% {
+        color: var(--color-display-text);
+    }
+    50% {
+        color: var(--color-display-text-alt);
+    }
+    100% {
+        color: var(--color-display-text);
+    }
+}
+
+/* ============ GROWTH ANIMATION (Score increase) ============ */
+@keyframes grow {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.leaderboard-item {
+    animation: grow 300ms ease-out;
+}
+
+/* ============ HOVER LIFT ANIMATION ============ */
+@keyframes liftHover {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-3px);
+    }
+}
+
+.history-item:hover {
+    animation: liftHover 200ms ease-out forwards;
+}
+
+/* ============ BLINK ANIMATION ============ */
+@keyframes blink {
+    0%, 49% {
+        opacity: 1;
+    }
+    50%, 100% {
+        opacity: 0;
+    }
+}
+
+/* ============ TEXT TYPING ANIMATION ============ */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.input-buffer {
+    overflow: hidden;
+    border-right: 3px solid var(--color-display-text);
+    white-space: nowrap;
+}
+
+/* ============ FOCUS RING ANIMATION ============ */
+@keyframes focusRing {
+    0% {
+        box-shadow: 0 0 0 0 rgba(9, 132, 227, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(9, 132, 227, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(9, 132, 227, 0);
+    }
+}
+
+.btn:focus-visible {
+    animation: focusRing 600ms ease-out;
+}
+
+/* ============ MODAL OVERLAY FADE ============ */
+@keyframes overlayFade {
+    from {
+        opacity: 0;
+        backdrop-filter: blur(0px);
+    }
+    to {
+        opacity: 1;
+        backdrop-filter: blur(4px);
+    }
+}
+
+.modal {
+    animation: overlayFade 200ms ease-out;
+}
+
+/* ============ SUCCESS CHECKMARK ANIMATION ============ */
+@keyframes checkmark {
+    0% {
+        stroke-dashoffset: 50;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+.checkmark-icon {
+    stroke-dasharray: 50;
+    animation: checkmark 500ms ease-out forwards;
+}
+
+/* ============ EXPAND COLLAPSE ANIMATION ============ */
+@keyframes expandHeight {
+    from {
+        max-height: 0;
+        opacity: 0;
+    }
+    to {
+        max-height: 500px;
+        opacity: 1;
+    }
+}
+
+@keyframes collapseHeight {
+    from {
+        max-height: 500px;
+        opacity: 1;
+    }
+    to {
+        max-height: 0;
+        opacity: 0;
+    }
+}
+
+/* ============ GRADIENT ANIMATION ============ */
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ============ TRANSLATE ANIMATION ============ */
+@keyframes translateRight {
+    from {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.tab-content {
+    animation: translateRight 300ms ease-out;
+}
+
+/* ============ SCALE ANIMATION ============ */
+@keyframes scaleUp {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    animation: scaleUp 300ms ease-out;
+}
+
+/* ============ ATTENTION SEEKER - BOUNCE ============ */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-10px);
+    }
+    60% {
+        transform: translateY(-5px);
+    }
+}
+
+.btn:hover:not(:disabled) {
+    animation: bounce 600ms ease-in-out;
+}
+
+/* ============ GLOW EFFECT ============ */
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.6);
+    }
+}
+
+.display-output {
+    animation: displayGlow 2s ease-in-out infinite;
+}
+
+/* ============ UTILITY: ANIMATION DELAY ============ */
+.stagger-1 { animation-delay: 50ms; }
+.stagger-2 { animation-delay: 100ms; }
+.stagger-3 { animation-delay: 150ms; }
+.stagger-4 { animation-delay: 200ms; }
+.stagger-5 { animation-delay: 250ms; }
+
+/* ============ ACCESSIBILITY: DISABLE ANIMATIONS ============ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

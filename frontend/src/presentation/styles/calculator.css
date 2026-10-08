@@ -1,0 +1,354 @@
+/* ============================================================
+   CASIO fx-991EX CALCULATOR LAYOUT & BUTTON STYLES
+   Uses only CSS variables from tokens.css
+   ============================================================ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 20px;
+  background-color: var(--theme-bg);
+  font-family: var(--btn-font-family);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  transition: background-color 300ms ease;
+}
+
+/* ========== CALCULATOR BODY ========== */
+.calc-body {
+  width: var(--calc-body-width);
+  background-color: var(--calc-body-bg);
+  border-radius: var(--calc-body-radius);
+  padding: var(--calc-body-padding);
+  box-shadow: var(--calc-body-shadow);
+  transition: background-color 300ms ease;
+  position: relative;
+}
+
+/* ========== DISPLAY AREA ========== */
+.calc-display {
+  background-color: var(--display-bg);
+  border-radius: var(--display-bezel-radius);
+  padding: var(--display-padding);
+  margin-bottom: 16px;
+  box-shadow: var(--display-inner-shadow);
+  min-height: var(--display-height);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: var(--display-font);
+  color: var(--display-text);
+  transition: background-color 300ms ease;
+}
+
+/* Display expression line (top, smaller) */
+.display-expression {
+  font-size: var(--display-expr-size);
+  line-height: 1.2;
+  text-align: right;
+  height: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  opacity: 0.8;
+}
+
+/* Display result line (bottom, larger) */
+.display-result {
+  font-size: var(--display-result-size);
+  font-weight: bold;
+  line-height: 1.1;
+  text-align: right;
+  height: 32px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* Display indicators row (DEG, RAD, GRAD, M, STO) */
+.display-indicators {
+  display: flex;
+  gap: 4px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 4px;
+  height: 16px;
+}
+
+.indicator {
+  background-color: var(--indicator-bg);
+  color: var(--indicator-text);
+  font-size: var(--indicator-font-size);
+  padding: var(--indicator-padding);
+  border-radius: var(--indicator-radius);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.indicator.active {
+  opacity: 1;
+}
+
+/* ========== BUTTON GRID ========== */
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--btn-grid-cols), 1fr);
+  gap: var(--btn-grid-gap);
+  padding: var(--btn-grid-padding);
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+}
+
+/* ========== BUTTON BASE STYLES ========== */
+.btn {
+  width: 100%;
+  height: var(--btn-height);
+  font-size: var(--btn-font-size);
+  font-weight: var(--btn-font-weight);
+  font-family: var(--btn-font-family);
+  border: none;
+  border-radius: var(--btn-radius);
+  cursor: pointer;
+  transition: var(--btn-transition);
+  box-shadow: var(--btn-shadow);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+
+  /* 3D effect: top highlight */
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+/* ========== BUTTON STATE ========== */
+.btn:active,
+.btn:focus-visible {
+  transform: translateY(2px);
+  box-shadow: var(--btn-shadow-pressed);
+  outline: none;
+}
+
+/* ========== BUTTON COLOR GROUPS ========== */
+
+/* SHIFT button (orange) */
+.btn-shift {
+  background-color: var(--btn-shift-bg);
+  color: var(--btn-shift-text);
+}
+
+.btn-shift:active {
+  background-color: #e59e0e;
+}
+
+/* ALPHA button (red) */
+.btn-alpha {
+  background-color: var(--btn-alpha-bg);
+  color: var(--btn-alpha-text);
+}
+
+.btn-alpha:active {
+  background-color: #a02d24;
+}
+
+/* Number buttons (0-9) (dark blue-gray) */
+.btn-number {
+  background-color: var(--btn-number-bg);
+  color: var(--btn-number-text);
+}
+
+.btn-number:active {
+  background-color: #2d3f55;
+}
+
+/* Scientific function buttons (darker navy) */
+.btn-sci {
+  background-color: var(--btn-sci-bg);
+  color: var(--btn-sci-text);
+}
+
+.btn-sci:active {
+  background-color: #1f2e42;
+}
+
+/* Equals button (amber, wider) */
+.btn-equals {
+  background-color: var(--btn-equals-bg);
+  color: var(--btn-equals-text);
+  grid-column: span 1;
+}
+
+.btn-equals:active {
+  background-color: #d26a1c;
+}
+
+/* Delete/Clear buttons (red) */
+.btn-delete {
+  background-color: var(--btn-delete-bg);
+  color: var(--btn-delete-text);
+}
+
+.btn-delete:active {
+  background-color: #a02d24;
+}
+
+/* Navigation buttons (arrows, menu) */
+.btn-nav {
+  background-color: var(--btn-nav-bg);
+  color: var(--btn-nav-text);
+}
+
+.btn-nav:active {
+  background-color: #1f2e42;
+}
+
+/* Memory buttons (same as sci, but distinct) */
+.btn-memory {
+  background-color: var(--btn-sci-bg);
+  color: var(--btn-sci-text);
+}
+
+.btn-memory:active {
+  background-color: #1f2e42;
+}
+
+/* ========== RESPONSIVE MOBILE (< 480px) ========== */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .calc-body {
+    width: 100%;
+    max-width: 320px;
+    padding: 12px;
+    transform: scale(0.85);
+    transform-origin: top center;
+    margin-bottom: 20px;
+  }
+
+  .btn {
+    height: 26px;
+    font-size: 10px;
+  }
+
+  .display-result {
+    font-size: 20px;
+  }
+
+  .display-expression {
+    font-size: 11px;
+  }
+}
+
+/* ========== RESPONSIVE TABLET (481px - 768px) ========== */
+@media (min-width: 481px) and (max-width: 768px) {
+  .calc-body {
+    width: 280px;
+  }
+
+  .btn {
+    height: 26px;
+    font-size: 10px;
+  }
+
+  .display-result {
+    font-size: 22px;
+  }
+
+  .display-expression {
+    font-size: 12px;
+  }
+}
+
+/* ========== RESPONSIVE DESKTOP (> 769px) ========== */
+@media (min-width: 769px) {
+  .calc-body {
+    width: var(--calc-body-width);
+  }
+
+  .btn {
+    height: var(--btn-height);
+    font-size: var(--btn-font-size);
+  }
+
+  .display-result {
+    font-size: var(--display-result-size);
+  }
+
+  .display-expression {
+    font-size: var(--display-expr-size);
+  }
+}
+
+/* ========== ACCESSIBILITY ========== */
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .calc-body,
+  body {
+    transition: none !important;
+  }
+
+  .btn:active {
+    transform: none;
+  }
+}
+
+/* ========== FOCUS STYLES FOR KEYBOARD NAV ========== */
+.btn:focus-visible {
+  outline: 2px solid var(--btn-shift-bg);
+  outline-offset: -2px;
+}
+
+/* ========== THEME TOGGLE POSITIONING ========== */
+.theme-toggle {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: transparent;
+  border: none;
+  color: var(--btn-shift-text);
+  cursor: pointer;
+  padding: 4px 6px;
+  font-size: 16px;
+  transition: transform 200ms ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+}
+
+.theme-toggle:active {
+  transform: scale(0.95);
+}
+
+/* ========== OPTIONAL: MODE INDICATOR (SHIFT/ALPHA ACTIVE) ========== */
+.mode-indicator {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 200ms ease;
+}
+
+.mode-indicator.shift-active {
+  background-color: var(--btn-shift-bg);
+  opacity: 1;
+}
+
+.mode-indicator.alpha-active {
+  background-color: var(--btn-alpha-bg);
+  opacity: 1;
+}
